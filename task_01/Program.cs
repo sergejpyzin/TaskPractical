@@ -4,18 +4,26 @@
 // a = 9, b = -3 -> да
 // a = -3 b = 9 -> нет
 
+
+// Запрашиваем числа у пользоваиеля
 Console.Write("Введите первое число: ");
 int numberA = Convert.ToInt32(Console.ReadLine());
 Console.Write("Введите второе число: ");
 int numberB = Convert.ToInt32(Console.ReadLine());
 
+// Вводим переменную и присваиваем ей значение квадрата второго чила
 int square = numberB * numberB;
 
+// Проверяем условие равности первого числа квадрату второго числа
 if (numberA == square)
 {
+    // Действие программы в случае если условие true
     Console.WriteLine("Да. Первое число являеться квадратом второго");
 }
 else 
 {
+    // Действие программы в случае если условие false
     Console.WriteLine("Нет. Первое число не являеться квадратом второго");
+    Console.Write("Квадрат второго числа равен: ");
+    Console.Write(square);
 }
