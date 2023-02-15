@@ -7,14 +7,21 @@
 32679 -> 6 */
 
 // Вводим случайное чмсло
-int number = 1000;
-int interResult = number % 1000;
+int number = Random.Shared.Next();
+System.Console.WriteLine(number);
 
 // Выполняем условия задачи
-for (int i = number; i > int.MaxValue;)
+if (number % 100 == number || number % 10 == number)
 {
-    if (number % 1000 != 0)
+    System.Console.WriteLine("Данное число не имеет третьего знака");
+}
+else
+{
+    do
     {
-        number % 10;
+        if (number % 1000 != number) number = number / 10;
     }
+    while (number % 1000 != number);
+    number = number % 10;
+    System.Console.WriteLine(number);
 }
