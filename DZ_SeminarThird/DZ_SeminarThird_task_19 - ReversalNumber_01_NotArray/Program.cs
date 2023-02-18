@@ -27,6 +27,7 @@ int GetDataRequest(string userMassedge)
 int number = GetDataRequest("Введите пятизначное число: ");
 
 int digit1, digit2, digit3, digit4, digit5;
+int result;
 
 // Выполняем условия задачи
 if (number > 99999 || number < 10000)
@@ -40,6 +41,15 @@ else
     digit3 = number / 100 % 10;
     digit2 = number / 1000 % 10;
     digit1 = number / 10000;
-    int result = digit5 * 10000 + digit4 * 1000 + digit3 * 100 + digit2 * 10 + digit1;
-    Console.WriteLine($"{result}");    
+    result = digit5 * 10000 + digit4 * 1000 + digit3 * 100 + digit2 * 10 + digit1;
+    if (result == number)
+    {
+        Console.WriteLine($"Число {number} является полиндромом");
+    }
+    else
+    {
+        Console.WriteLine($"Число {number} не является полиндромом");
+        
+    }
 }
+
