@@ -3,10 +3,18 @@
 
 // Создаем метод разворота массива ReversalArray
 
-/* int ReversalArray (int array)
+int [] GetReversalArray (int [] array)
 {
+for (int i = 0, j = array.Length - 1; i < j; i++, j--)
+{
+    int temp = array[i];
+    array[i] = array[j];
+    array[j] = temp;               
+}
+return array;
+} 
 
-} */
+// Проверка работы метода
 
 // Создаем метод запроса информации у пользователя - DataRequest
 int DataRequest(string userMassedge)
@@ -31,13 +39,18 @@ int DataRequest(string userMassedge)
 // Создаем массив
 int n = DataRequest("Введите длинну массива: ");
 
-int [] array = new int [n];
-for (int i = 0; i < n.length; i++)
+int [] arr = new int [n];
+
+// Заполняем массив
+for (int i = 0; i < arr.Length; i++)
 {
-    array [i] = DataRequest ("Введите число: ");
+    arr [i] = DataRequest ("Введите число: ");
 }
-for (int j = 0; j < n.length; j++)
+
+int [] massive = GetReversalArray(arr);
+for (int i = 0; i < massive.Length; i++)
 {
-    Console.WriteLine($"{array [j]}");
-    
+    Console.WriteLine($"{massive[i]}");    
 }
+
+
