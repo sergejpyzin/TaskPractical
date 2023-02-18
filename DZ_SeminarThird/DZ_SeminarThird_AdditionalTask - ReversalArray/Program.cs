@@ -60,6 +60,7 @@ for (int i = 0; i < myArray.Length; i++)
 }
 
 System.Console.WriteLine("\n=============================");
+
 int [] massive = GetReversalArray(myArray);
 for (int i = 0; i < massive.Length; i++)
 {
