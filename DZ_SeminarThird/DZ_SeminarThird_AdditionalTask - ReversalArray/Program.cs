@@ -16,8 +16,20 @@ return array;
 
 // Проверка работы метода
 
+// Создаем метод заполнения массива случайными числами
+
+int [] GetRandomArray (uint length, int minValue, int maxValue)
+{
+    int [] array = new int [length];
+for (int i = 0; i < array.Length; i++)
+{
+    array[i] = Random.Shared.Next(minValue, maxValue);
+}
+return array;
+}
+
 // Создаем метод запроса информации у пользователя - DataRequest
-int DataRequest(string userMassedge)
+int GetDataRequest(string userMassedge)
 {
     while (true)
     {
@@ -37,20 +49,21 @@ int DataRequest(string userMassedge)
 }
 
 // Создаем массив
-int n = DataRequest("Введите длинну массива: ");
+int value = GetDataRequest("Введите длинну, целое положительное, необходимого массива: ");
+int min = GetDataRequest("Введите минимально возможное значение элемента массива: ");
+int max = GetDataRequest("Введите максимально возможное значение элемента массива: ");
 
-int [] arr = new int [n];
-
-// Заполняем массив
-for (int i = 0; i < arr.Length; i++)
+int [] myArray = GetRandomArray((uint)value, min, max);
+for (int i = 0; i < myArray.Length; i++)
 {
-    arr [i] = DataRequest ("Введите число: ");
+    Console.Write($"{myArray[i]} ");    
 }
 
-int [] massive = GetReversalArray(arr);
+System.Console.WriteLine("\n=============================");
+int [] massive = GetReversalArray(myArray);
 for (int i = 0; i < massive.Length; i++)
 {
-    Console.WriteLine($"{massive[i]}");    
+    Console.Write($"{massive[i]} ");    
 }
 
 
